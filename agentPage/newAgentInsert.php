@@ -1,3 +1,9 @@
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,13 +24,17 @@
     ?>
 
     <?php
-        session_start();
+        
         //not logged in
         if (!isset($_SESSION['login']) || $_SESSION['login'] = 0) {
             header("Location: http://localhost/PHP-HAOTIAN-ZHANG/loginPage/login.php");
-        } else {
-            //auto log out, replace later with "logout" button
-            unset($_SESSION['login']);
+        } else {//logged in
+            
+            //show logged in time
+            setcookie("start_time",time(),time()+60*60*5);
+            echo("Logged in at:".date("F d, Y h:i:s A", $_COOKIE['start_time'])."<br>");
+
+
             $error = 0;
             //initial the temp array to hold correct POST Data
             $tempValue[0] = array("AgtFirstName" => "", "AgtMiddleInitial" => "", "AgtLastName" => "", "AgencyId" => "", "AgtEmail" => "", "AgtPosition" => "");

@@ -1,4 +1,8 @@
 <?php
+ if(!isset($_SESSION)) 
+ { 
+     session_start(); 
+ } 
 $rootFolder    = 'PHP-HAOTIAN-ZHANG';
 $indexClass    = ($_SERVER['SCRIPT_NAME'] == '/PHP-HAOTIAN-ZHANG/index.php') ? 'class="active"' : '';
 $newAgentClass = ($_SERVER['SCRIPT_NAME'] == '/PHP-HAOTIAN-ZHANG/agentPage/newAgentInsert.php') ? 'class="active"' : '';
@@ -23,11 +27,19 @@ echo ("
         </li>
         <li>
             <a $contactClass href='/PHP-HAOTIAN-ZHANG/contactPage/contact.php'>Contact Us</a>
-        </li>
-        <li class='login'>
+        </li>");
+        
+// show login/logout button
+if (isset($_SESSION['login'])) {
+    echo ("
+        <li class='ultity'>
+        <a href='/PHP-HAOTIAN-ZHANG/Functions/logoutFunction.php'>Logout</a>
+        </li>");
+} else {
+    echo ("
+        <li class='ultity'>
             <a href='/PHP-HAOTIAN-ZHANG/loginPage/login.php'>Login</a>
-        </li>
-    </ul>
-</nav>
-");
+        </li>");
+}
+echo ("</ul></nav>")
 ?>

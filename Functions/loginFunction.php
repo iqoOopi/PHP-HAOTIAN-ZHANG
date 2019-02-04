@@ -3,7 +3,10 @@
 $userPassword=getUserPasswordInfo();
 
 //start session
-session_start();
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 if (!isset($_SESSION['login'])) {
     $_SESSION['login'] = 0;
 }
@@ -37,9 +40,13 @@ if ($error) {
     unset($_SESSION['wrongPassword']);
     header("Location: http://localhost/PHP-HAOTIAN-ZHANG");
 }
+
+
+
+//get stored password
 function getUserPasswordInfo()
 {
-    //get stored password
+    
     $filePointer  = fopen("../database/users.txt", "r") or die("Unable to open file!");
     $userPassword = array();
     while (!feof($filePointer)) {
