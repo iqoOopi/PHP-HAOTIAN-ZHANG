@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<?php include_once "head.php";?>
+</head>
+
+<body>
+    <?php
+       require_once "header.php";
+   ?>
+    <div class="main-container">
+        <h1 class="title">Welcome to Travel Experts</h1>
+        <?php
+            // echo phpinfo();
+            require_once "menu.php";
+            date_default_timezone_set("US/Mountain");
+            $hour = localtime()[2];
+            if ($hour > 18) {
+                $class    = "gE";
+                $greating = "Evening";
+            } elseif ($hour >= 12) {
+                $class    = "gA";
+                $greating = "Afternoon";
+            } else {
+                $class    = "gM";
+                $greating = "Morning";
+            }
+            // $dayTime = ($hour >= 17) ? "Evening" : (($hour >= 12) ? "Afternoon" : "Morning");
+            echo ("<div class='$class'><h2>Good $greating !</h2>");
+        ?>
+
+        <div class="banner-container">
+            <div class="grid-image">
+                <img src="pic/travel/1.jpg">
+            </div>
+            <div class="grid-image">
+                <img src="pic/travel/2.jpg">
+            </div>
+            <div class="grid-image">
+                <img src="pic/travel/3.jpg">
+            </div>
+        </div>
+
+        <div class="function-grid">
+            <div class="grid-image2">
+                <a href="contact.php">
+                    <img src="pic/contact.jpg">
+                </a>
+            </div>
+            <div class="grid-image2">
+                <a href="register.php">
+                    <img src="pic/register.jpg">
+                </a>
+            </div>
+        </div>
+
+
+        <div id="main-banner">
+
+        </div>
+        <a href="contact.php">
+            <img id="customerService" src="pic/Customer-Service.png">
+        </a>
+        <!-- <img id="test" src="pic/Customer-Service.png"> -->
+        <?php
+            require_once "footer.php";
+        ?>
+      
+        <script src="js/array-script.js"></script>
+        <script src="js/customerService.js"></script>
+</body>
+
+</html>
