@@ -9,8 +9,6 @@
 
 <head>
     <?php include_once "../head.php";?>
-    <!--<?php include_once "PHP-HAOTIAN-ZHANG/head.php";?> -->
-    <!-- input mask function from https://github.com/RobinHerbots/Inputmask -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js">
     </script>
@@ -26,7 +24,9 @@
     <?php
         
         //not logged in
-        if (!isset($_SESSION['login']) || $_SESSION['login'] = 0) {
+        if (!isset($_SESSION['login']) || $_SESSION['login'] == 0) {
+            //clear error message for wrong password, if user try enter agentForm page after a unsuccess login attemp.
+            session_destroy();
             header("Location: http://localhost/PHP-HAOTIAN-ZHANG/loginPage/login.php");
         } else {//logged in
             

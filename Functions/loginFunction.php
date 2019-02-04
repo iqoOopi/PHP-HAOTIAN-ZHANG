@@ -1,12 +1,12 @@
 <?php
+//start session
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 //get stored pasword
 $userPassword=getUserPasswordInfo();
 
-//start session
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
 if (!isset($_SESSION['login'])) {
     $_SESSION['login'] = 0;
 }
