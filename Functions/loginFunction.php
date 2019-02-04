@@ -35,24 +35,23 @@ if ($error) {
 } else {
     $_SESSION['login'] = 1;
     unset($_SESSION['wrongPassword']);
-    header("Location: http://google.ca");
+    header("Location: http://localhost/PHP-HAOTIAN-ZHANG");
 }
-
 function getUserPasswordInfo()
 {
     //get stored password
     $filePointer  = fopen("../database/users.txt", "r") or die("Unable to open file!");
     $userPassword = array();
     while (!feof($filePointer)) {
-        //get rid of the '/n' from fgets
+        //get rid of the '/n' from fgets. [0]for username [1] for password
         $line                        = trim(fgets($filePointer));
         $tempArray                   = array();
         $tempArray                   = explode(' ', $line);
         $hashedPassword              = password_hash($tempArray[1], PASSWORD_DEFAULT);
-        $userPassword[$tempArray[0]] = "$hashedPassword";
+        //simulate getting hashedPassword from database
+        $userPassword[$tempArray[0]] = $hashedPassword;
         // $userPassword[$tempArray[0]] = $tempArray[1];
     }
-// print_r($userPassword);
     fclose($filePointer);
     return $userPassword;
 }

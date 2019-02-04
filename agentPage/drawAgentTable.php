@@ -4,7 +4,7 @@
     print <<<EOF
         <form class="Form newAgent" method="post" action="newAgentInsert.php">
         <label for="AgtFirstName">FirstName:</label>
-        <input type="text" name="AgtFirstName" id="AgtFirstName" placeholder="{$placeHolder['AgtFirstName']} "value="{$tempValue['AgtFirstName']}">
+        <input type="text" name="AgtFirstName" id="AgtFirstName" placeholder="{$placeHolder['AgtFirstName']}"value="{$tempValue['AgtFirstName']}">
 
         <label for="AgtMiddleInitial">Middle Initial:</label>
         <input type="text" name="AgtMiddleInitial" id="AgtMiddleInitial" placeholder="{$placeHolder['AgtMiddleInitial']}" value="{$tempValue['AgtMiddleInitial']}">
