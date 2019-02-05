@@ -1,45 +1,50 @@
 /* index.php */
 
-html{
+html {
   box-sizing: border-box;
 }
-*,*:before,*:after{
-  box-sizing:inherit;
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
+
 .nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
-  
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
 .nav ul li {
-    float: left;
-  }
-  
+  float: left;
+}
+
 .nav ul li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
 .nav ul li a:hover {
-    background-color: #111;
-  }
-.nav .active{
+  background-color: #111;
+}
+
+.nav .active {
   background-color: #4CAF50;
 }
 
-.main-container{
+.main-container {
   position: relative;
   /* background: #5C97FF; */
-  overflow: hidden;  
+  overflow: hidden;
 }
+
 /* set background img to opacity 0.4 as img don't have opacity property, need to do it in bgimg */
-.main-container:before{
+
+.main-container:before {
   content: ' ';
   display: block;
   position: absolute;
@@ -58,76 +63,86 @@ html{
   -webkit-background-size: cover;
   background-size: cover;
 }
+
 header h1 {
-  color:goldenrod;
+  color: goldenrod;
   font-family: 'ZCOOL QingKe HuangYou', cursive;
-  text-align:center;
+  text-align: center;
 }
-header img{
+
+header img {
   display: block;
   max-width: 20%;
   height: auto;
   margin-left: auto;
   margin-right: auto;
 }
+
 /* index.php main title */
+
 .title {
   text-align: center;
 }
+
 .banner-container {
   display: grid;
-  max-width:100%;
+  max-width: 100%;
   grid-template-columns: 1fr 1fr 1fr;
-  margin:auto;
+  margin: auto;
   /* grid-gap: 20px; */
 }
+
 .function-grid {
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  max-width:50%;
-  margin:auto;
-  text-align:center;
+  max-width: 50%;
+  margin: auto;
+  text-align: center;
   justify-items: center;
 }
+
 .grid-image img {
-    max-width:100%;
-    height:auto;
-    padding: 5px;
-    border-style: dotted;
-    border-width: 5px;
+  max-width: 100%;
+  height: auto;
+  padding: 5px;
+  border-style: dotted;
+  border-width: 5px;
 }
-.grid-image2 img{
-  max-width:100%;
+
+.grid-image2 img {
+  max-width: 100%;
 }
-#customerService{
-  width:100px;
-  height:auto;
+
+#customerService {
+  width: 100px;
+  height: auto;
   position: fixed;
 }
+
 footer p {
   font-size: 1em;
 }
 
 /* responsive image table design for small screen */
-@media screen and (max-width: 600px) {
-#picTable img{
-  max-width: 100px;
-  height:auto;
-}    
-#picTable td{
-  font-size: 1em!important;
-}
-footer p{
-  font-size: 10px;
-}
-}
 
+@media screen and (max-width: 600px) {
+  #picTable img {
+    max-width: 100px;
+    height: auto;
+  }
+  #picTable td {
+    font-size: 1em!important;
+  }
+  footer p {
+    font-size: 10px;
+  }
+}
 
 /* register.php */
 
 #registerImg {
   max-height: 100px;
-  width:auto;
+  width: auto;
   display: inline-block;
   margin-left: 0;
   margin-right: 0;
@@ -137,10 +152,11 @@ footer p{
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
-.Form{
-  background-image: url("/PHP-HAOTIAN-ZHANG/pic/background.jpg");
+
+.Form {
+  background-image: url("../pic/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -153,33 +169,31 @@ footer p{
   padding: 1.2em;
 }
 
-.Form > label  {
+.Form>label {
   grid-column: labels;
   grid-row: auto;
   vertical-align: middle;
-  align-self:center;
+  align-self: center;
 }
 
-.Form input,.Form textarea,.Form .radioButtonContainer {
-
-  width:100%;
+.Form input, .Form textarea, .Form .radioButtonContainer {
+  width: 100%;
   grid-column: controls;
   grid-row: auto;
   border: none;
   padding: 1em;
   resize: vertical;
-  text-align:left;
+  text-align: left;
 }
-.Form .radioOptionContainer{
-  display:block;
-  width:100%;
+
+.Form .radioOptionContainer {
+  display: block;
+  width: 100%;
   display: relative;
-  
 }
-.radioOptionContainer input{
 
-  max-width:30px;
-
+.radioOptionContainer input {
+  max-width: 30px;
 }
 
 .popupContainer {
@@ -188,69 +202,72 @@ footer p{
   border: none;
   /* padding: 1em; */
   position: relative;
-  display:inline-block;
-  
+  display: inline-block;
 }
-.popupContainer .popupText{
-visibility:hidden;
-position: absolute;
-z-index: 1;
-bottom:112%;
-left:50%;
-background-color:black;
-color: white;
-cursor: pointer;
-width:50%;
-margin-left:-25%;
-text-align:center;
+
+.popupContainer .popupText {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  bottom: 112%;
+  left: 50%;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  width: 50%;
+  margin-left: -25%;
+  text-align: center;
 }
 
 /* draw a arrow-down, only top border has width */
+
 .popupContainer .popupText::after {
   content: "";
   position: absolute;
   border-width: 6px;
   border-style: solid;
-  border-color:black transparent transparent transparent;
+  border-color: black transparent transparent transparent;
   margin-left: -6px;
-  top:100%;
-  left:50%;
+  top: 100%;
+  left: 50%;
 }
 
 .popupContainer .show {
   visibility: visible;
-
 }
 
-.button
-{
-  width:100%;
+.button {
+  width: 100%;
   border: none;
   padding: 1em;
   resize: vertical;
 }
-.button:hover{
-  background-color:goldenrod;
-  color:white;
+
+.button:hover {
+  background-color: goldenrod;
+  color: white;
 }
 
 /* links.php */
+
 #linkTable {
-  border:1px solid black;
+  border: 1px solid black;
   border-collapse: collapse;
-  max-width:80%;
-  margin-left:auto;
-  margin-right:auto;
-  }
-#linkTable td{
-  font-size:2em;
-  border:1px solid black;
-  min-width:300px;
-  max-width:40%;
-  text-align:center;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+#linkTable td {
+  font-size: 2em;
+  border: 1px solid black;
+  min-width: 300px;
+  max-width: 40%;
+  text-align: center;
+}
+
 .ultity {
   float: right !important;
-  width:100px;
+  width: 100px;
   background-color: blue;
 }

@@ -1,44 +1,43 @@
 <?php
- if(!isset($_SESSION)) 
- { 
-     session_start(); 
- } 
-$rootFolder    = 'PHP-HAOTIAN-ZHANG';
-$indexClass    = ($_SERVER['SCRIPT_NAME'] == '/PHP-HAOTIAN-ZHANG/index.php') ? 'class="active"' : '';
-$newAgentClass = ($_SERVER['SCRIPT_NAME'] == '/PHP-HAOTIAN-ZHANG/agentPage/newAgentInsert.php') ? 'class="active"' : '';
-$linksClass    = ($_SERVER['SCRIPT_NAME'] == '/PHP-HAOTIAN-ZHANG/linksPage/links.php') ? 'class="active"' : '';
-$registerClass = ($_SERVER['SCRIPT_NAME'] == '/PHP-HAOTIAN-ZHANG/registerPage/register.php') ? 'class="active"' : '';
-$contactClass  = ($_SERVER['SCRIPT_NAME'] == '/PHP-HAOTIAN-ZHANG/contactPage/contact.php') ? 'class="active"' : '';
+include_once "top.php";
+if (!isset($_SESSION)) {
+ session_start();
+}
+$indexClass    = ($_SERVER['SCRIPT_NAME'] == $_root.'/index.php') ? 'class="active"' : '';
+$newAgentClass = ($_SERVER['SCRIPT_NAME'] == $_root.'/agentPage/newAgentInsert.php') ? 'class="active"' : '';
+$linksClass    = ($_SERVER['SCRIPT_NAME'] == $_root.'/linksPage/links.php') ? 'class="active"' : '';
+$registerClass = ($_SERVER['SCRIPT_NAME'] == $_root.'/registerPage/register.php') ? 'class="active"' : '';
+$contactClass  = ($_SERVER['SCRIPT_NAME'] == $_root.'/contactPage/contact.php') ? 'class="active"' : '';
 
 echo ("
 <nav class='nav'>
     <ul>
         <li>
-            <a $indexClass href='/PHP-HAOTIAN-ZHANG/index.php'>Home</a>
+            <a $indexClass href='$_root/index.php'>Home</a>
         </li>
         <li>
-            <a $linksClass href='/PHP-HAOTIAN-ZHANG/linksPage/links.php'>Links</a>
+            <a $linksClass href='$_root/linksPage/links.php'>Links</a>
         </li>
         <li>
-            <a $registerClass href='/PHP-HAOTIAN-ZHANG/registerPage/register.php'>Registration</a>
+            <a $registerClass href='$_root/registerPage/register.php'>Registration</a>
         </li>
         <li>
-            <a $newAgentClass href='/PHP-HAOTIAN-ZHANG/agentPage/newAgentInsert.php'>newAgent</a>
+            <a $newAgentClass href='$_root/agentPage/newAgentInsert.php'>newAgent</a>
         </li>
         <li>
-            <a $contactClass href='/PHP-HAOTIAN-ZHANG/contactPage/contact.php'>Contact Us</a>
+            <a $contactClass href='$_root/contactPage/contact.php'>Contact Us</a>
         </li>");
-        
+
 // show login/logout button
-if (isset($_SESSION['login'])) {
-    echo ("
+if (isset($_SESSION['login'])&&$_SESSION['login'] == 1) {
+ echo ("
         <li class='ultity'>
-        <a href='/PHP-HAOTIAN-ZHANG/Functions/logoutFunction.php'>Logout</a>
+        <a href='$_root/Functions/logoutFunction.php'>Logout</a>
         </li>");
 } else {
-    echo ("
+ echo ("
         <li class='ultity'>
-            <a href='/PHP-HAOTIAN-ZHANG/loginPage/login.php'>Login</a>
+            <a href='$_root/loginPage/login.php'>Login</a>
         </li>");
 }
 echo ("</ul></nav>")

@@ -1,8 +1,5 @@
 <?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+include_once "../top.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,9 +22,7 @@
         
         //not logged in
         if (!isset($_SESSION['login']) || $_SESSION['login'] == 0) {
-            //clear error message for wrong password, if user try enter agentForm page after a unsuccess login attemp.
-            session_destroy();
-            header("Location: http://localhost/PHP-HAOTIAN-ZHANG/loginPage/login.php");
+            header("Location: http://localhost/$_root/loginPage/login.php");
         } else {//logged in
             
             //show logged in time

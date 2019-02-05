@@ -1,3 +1,4 @@
+<?php include_once "top.php"; ?>
 <!DOCTYPE html>
 <html>
 
@@ -59,9 +60,15 @@
         <div id="main-banner">
 
         </div>
-        <a href="contact.php">
-            <img id="customerService" src="pic/Customer-Service.png">
+
+        <!-- floating contact icon -->
+        <?php
+        echo("
+        <a href='$_root/contactPage/contact.php'>
+            <img id='customerService' src='pic/Customer-Service.png'>
         </a>
+        ")
+        ?>
         <!-- <img id="test" src="pic/Customer-Service.png"> -->
         <?php
             require_once "footer.php";
