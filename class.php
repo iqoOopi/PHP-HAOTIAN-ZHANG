@@ -60,6 +60,7 @@ class agent extends person
         $this->AgtEmail    = $tempArray['AgtEmail'];
         $this->AgtPosition = $tempArray['AgtPosition'];
         $this->AgencyId    = $tempArray['AgencyId'];
+        $this->id=id;//currently no use
     }
 
     public function valueToString()
