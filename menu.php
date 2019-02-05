@@ -31,8 +31,16 @@ echo ("
 // show login/logout button
 if (isset($_SESSION['login'])&&$_SESSION['login'] == 1) {
  echo ("
-        <li class='ultity'>
-        <a href='$_root/Functions/logoutFunction.php'>Logout</a>
+        <li class='ultity' id='logout'>
+        <a href='#'>Logout</a>
+        <script>
+        document.getElementById('logout').addEventListener('click', function(){
+            if (confirm('Are you sure?')){
+                window.location.href = '$_root/Functions/logoutFunction.php';
+            }
+        });
+        </script>
+       
         </li>");
 } else {
  echo ("

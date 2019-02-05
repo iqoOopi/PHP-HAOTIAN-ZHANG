@@ -26,10 +26,7 @@ include_once "../top.php";
         } else {//logged in
             
             //show logged in time
-            setcookie("start_time",time(),time()+60*60*5);
-            echo("Logged in at:".date("F d, Y h:i:s A", $_COOKIE['start_time'])."<br>");
-
-
+            echo("Logged in at:".date("F d, Y h:i:s A", $_SESSION['loginTime'])."<br>");
             $error = 0;
             //initial the temp array to hold correct POST Data
             $tempValue[0] = array("AgtFirstName" => "", "AgtMiddleInitial" => "", "AgtLastName" => "", "AgencyId" => "", "AgtEmail" => "", "AgtPosition" => "");

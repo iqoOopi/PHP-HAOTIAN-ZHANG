@@ -3,11 +3,10 @@ include_once "../top.php";
 ?>
 <!DOCTYPE html>
 <html>
-
 <!--Coded with love by Mutiullah Samim-->
 <!-- Modified by Henry Zhang with respect -->
 <head>
-    <title>My Awesome Login Page</title>
+    <title>ShinyLife Login Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -60,19 +59,19 @@ if (isset($_SESSION['wrongPassword']) && $_SESSION['wrongPassword']) {
                             </div>
                         </div> -->
                         <div class="d-flex justify-content-center mt-3 login_container">
-                            <input type="submit" name="button" class="btn login_btn" value="Login"></button>
+                            <input type="submit" name="submit" class="btn login_btn" value="Login"></button>
                         </div>
                     </form>
                 </div>
 
-                <!-- <div class="mt-4">
+                <div class="mt-4">
 					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="#" class="ml-2">Sign Up</a>
+						Back to Home Page <a href="../index.php" class="ml-2">Home</a>
 					</div>
-					<div class="d-flex justify-content-center links">
+					<!-- <div class="d-flex justify-content-center links">
 						<a href="#">Forgot your password?</a>
-					</div>
-				</div> -->
+					</div> -->
+				</div>
             </div>
         </div>
     </div>

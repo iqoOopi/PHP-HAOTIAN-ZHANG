@@ -1,12 +1,11 @@
 <?php
 include_once "../top.php";
 //start session
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
+if (!isset($_SESSION)) {
+    session_start();
+}
 //get stored pasword
-$userPassword=getUserPasswordInfo();
+$userPassword = getUserPasswordInfo();
 
 if (!isset($_SESSION['login'])) {
     $_SESSION['login'] = 0;
@@ -17,34 +16,34 @@ if (!isset($_SESSION['wrongPassword'])) {
     $_SESSION['wrongPassword'] = 0;
 }
 
-
+if (isset($_POST['submit'])) {
 //get user input
-$username = $_POST['username'];
-$password = $_POST['password'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
 //check record
-$error = true;
-foreach ($userPassword as $key => $value) {
-    if ($username == $key) {
-        if (password_verify($password, $value)) {
-            $error = false;
+    $error = true;
+    foreach ($userPassword as $key => $value) {
+        if ($username == $key) {
+            if (password_verify($password, $value)) {
+                $error = false;
+            }
         }
     }
-}
 
 //result handling
-if ($error) {
-    $_SESSION['wrongPassword'] = 1;
-    $location='Location: http://localhost'.$_root.'/loginPage/login.php';
-    header($location);
-} else {
-    $_SESSION['login'] = 1;
-    unset($_SESSION['wrongPassword']);
-    $location='Location: http://localhost'.$_root;
-    header($location);
+    if ($error) {
+        $_SESSION['wrongPassword'] = 1;
+        $location                  = 'Location: http://localhost' . $_root . '/loginPage/login.php';
+        header($location);
+    } else {
+        $_SESSION['login']     = 1;
+        $_SESSION['loginTime'] = time();
+        unset($_SESSION['wrongPassword']);
+        $location = 'Location: http://localhost' . $_root.'/agentPage/newAgentInsert.php';
+        header($location);
+    }
 }
-
-
 
 //get stored password
 function getUserPasswordInfo()
@@ -53,10 +52,9 @@ function getUserPasswordInfo()
     $userPassword = array();
     while (!feof($filePointer)) {
         //get rid of the '/n' from fgets. [0]for username [1] for password
-        $line                        = trim(fgets($filePointer));
-        $tempArray                   = array();
-        $tempArray                   = explode(' ', $line);
-        $hashedPassword              = password_hash($tempArray[1], PASSWORD_DEFAULT);
+        $line           = trim(fgets($filePointer));
+        $tempArray      = explode(' ', $line);
+        $hashedPassword = password_hash($tempArray[1], PASSWORD_DEFAULT);
         //simulate getting hashedPassword from database
         $userPassword[$tempArray[0]] = $hashedPassword;
         // $userPassword[$tempArray[0]] = $tempArray[1];
