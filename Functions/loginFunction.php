@@ -1,4 +1,5 @@
 <?php
+include_once "../top.php";
 //start session
 if(!isset($_SESSION)) 
 { 
@@ -34,11 +35,13 @@ foreach ($userPassword as $key => $value) {
 //result handling
 if ($error) {
     $_SESSION['wrongPassword'] = 1;
-    header("Location: http://localhost/PHP-HAOTIAN-ZHANG/loginPage/login.php");
+    $location='Location: http://localhost'.$_root.'/loginPage/login.php';
+    header($location);
 } else {
     $_SESSION['login'] = 1;
     unset($_SESSION['wrongPassword']);
-    header("Location: http://localhost/PHP-HAOTIAN-ZHANG");
+    $location='Location: http://localhost'.$_root;
+    header($location);
 }
 
 
@@ -46,7 +49,6 @@ if ($error) {
 //get stored password
 function getUserPasswordInfo()
 {
-    
     $filePointer  = fopen("../database/users.txt", "r") or die("Unable to open file!");
     $userPassword = array();
     while (!feof($filePointer)) {
