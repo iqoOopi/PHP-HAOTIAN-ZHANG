@@ -1,8 +1,5 @@
 <?php
 include_once "top.php";
-if (!isset($_SESSION)) {
- session_start();
-}
 $indexClass    = ($_SERVER['SCRIPT_NAME'] == $_root.'/index.php') ? 'class="active"' : '';
 $newAgentClass = ($_SERVER['SCRIPT_NAME'] == $_root.'/agentPage/newAgentInsert.php') ? 'class="active"' : '';
 $linksClass    = ($_SERVER['SCRIPT_NAME'] == $_root.'/linksPage/links.php') ? 'class="active"' : '';

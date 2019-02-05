@@ -1,10 +1,5 @@
 <?php
-      if (!isset($_SESSION)) {
-          session_start();
-      }
-      // $result;
-      // echo ("<script> $result=confirm ('are your sure?') </script>");
-   
+include_once "../top.php";
       session_destroy();
-      header("Location: http://localhost/PHP-HAOTIAN-ZHANG/");
+      header("Location: http://localhost$_root/");
   ?>
