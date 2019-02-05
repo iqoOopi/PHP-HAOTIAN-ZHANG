@@ -64,8 +64,10 @@ include_once "../top.php";
                 } else {
                     //no error,ready to go
                     //Lazy load
-                    include_once "insertFunction.php";
-                    $insertResult = insertIntoDB($tempValue, $tblName);
+                    include_once "../Functions/insertFunction.php";
+                    include_once "../class.php";
+                    $agent=new agent(1,$tempValue[0]);
+                    $insertResult = insertIntoDB($agent, $tblName);
                     if ($insertResult) {
                         print("successed");
                     } else {

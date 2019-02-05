@@ -1,4 +1,5 @@
 <?php
+include_once "../class.php";
 function connectDB()
 {
     $link = new mysqli("127.0.0.1", "admin", "P@ssw0rd", "travelexperts");
@@ -15,7 +16,7 @@ function closeDB($link)
     $link->close();
 }
 
-function insertIntoDB($tempArray,$tblName)
+function insertIntoDB(agent $agent,$tblName)
 {
     $TableColoumnName  = "";
     $TableColoumnValue = "";
@@ -23,24 +24,31 @@ function insertIntoDB($tempArray,$tblName)
     $result;
     // Nested foreach to dynamic determin the amount of key=>value pair of the data.
     //1st foreach get the new row of data
-    foreach ($tempArray as $i => $data) {
-        //2nd foreach get the key=>value pair out of the row data.
-        foreach ($data as $key => $value) {
-            //format to SQL syntax with extra "," in the end.
-            $TableColoumnName .= ($key . ",");
-            $TableColoumnValue .= ("'" . $value . "',");
 
-            //code to test before touch the real database
-            // echo ("key:" . $key . "<br>");
-            // echo ("coloumn:" . $TableColoumnName);
-            // echo ("<br>");
-            // echo ("value:" . $TableColoumnValue);
-            // echo ("<br>");
-        }
-        //get rid of extra ","
-        $TableColoumnName  = substr($TableColoumnName, 0, -1);
-        $TableColoumnValue = substr($TableColoumnValue, 0, -1);
-        $sql               = "INSERT INTO $tblName ($TableColoumnName) VALUES($TableColoumnValue)";
+    //generic insert replaced by final day exerice that required use  class
+    // foreach ($tempArray as $i => $data) {
+    //     //2nd foreach get the key=>value pair out of the row data.
+    //     foreach ($data as $key => $value) {
+    //         //format to SQL syntax with extra "," in the end.
+    //         $TableColoumnName .= ($key . ",");
+    //         $TableColoumnValue .= ("'" . $value . "',");
+
+    //         //code to test before touch the real database
+    //         // echo ("key:" . $key . "<br>");
+    //         // echo ("coloumn:" . $TableColoumnName);
+    //         // echo ("<br>");
+    //         // echo ("value:" . $TableColoumnValue);
+    //         // echo ("<br>");
+    //     }
+    //     //get rid of extra ","
+    //     $TableColoumnName  = substr($TableColoumnName, 0, -1);
+    //     $TableColoumnValue = substr($TableColoumnValue, 0, -1);
+
+    $sqlName=$agent->nameToString();
+    $sqlValue=$agent->valueToString();
+    // echo ("$sqlName<br>");
+    // echo ("$sqlValue<br>");
+        $sql               = "INSERT INTO $tblName ($sqlName) VALUES($sqlValue)";
         //code for testing
         // echo $sql;
         // echo ("<br>**************<br>");
@@ -49,7 +57,7 @@ function insertIntoDB($tempArray,$tblName)
         $TableColoumnName  = "";
         $TableColoumnValue = "";
         $result            = $link->query($sql);
-    }
+    // }
     closeDB($link);
     return $result;
 }
