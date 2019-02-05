@@ -1,5 +1,5 @@
 <?php
-include_once "../class.php";
+include_once ('../class.php');
 function connectDB()
 {
     $link = new mysqli("127.0.0.1", "admin", "P@ssw0rd", "travelexperts");
@@ -18,8 +18,8 @@ function closeDB($link)
 
 function insertIntoDB(agent $agent,$tblName)
 {
-    $TableColoumnName  = "";
-    $TableColoumnValue = "";
+    // $TableColoumnName  = "";
+    // $TableColoumnValue = "";
     $link              = connectDB();
     $result;
     // Nested foreach to dynamic determin the amount of key=>value pair of the data.
@@ -46,16 +46,15 @@ function insertIntoDB(agent $agent,$tblName)
 
     $sqlName=$agent->nameToString();
     $sqlValue=$agent->valueToString();
-    // echo ("$sqlName<br>");
-    // echo ("$sqlValue<br>");
+   
         $sql               = "INSERT INTO $tblName ($sqlName) VALUES($sqlValue)";
         //code for testing
         // echo $sql;
         // echo ("<br>**************<br>");
 
         //Reset string holder for next data row
-        $TableColoumnName  = "";
-        $TableColoumnValue = "";
+        // $TableColoumnName  = "";
+        // $TableColoumnValue = "";
         $result            = $link->query($sql);
     // }
     closeDB($link);
