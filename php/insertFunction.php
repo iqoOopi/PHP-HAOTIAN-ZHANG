@@ -2,7 +2,7 @@
     *************************************************
     *Author:Haotian Zhang
     *Date: Feb 06 2019
-    *Purpose: commit data into DB
+    *Purpose: Model: commit agent data into DB
     *
     *************************************************
  -->
