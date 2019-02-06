@@ -1,14 +1,22 @@
+<!-- 
+    *************************************************
+    *Author:Haotian Zhang
+    *Date: Feb 06 2019
+    *Purpose: show contact page
+    *
+    *************************************************
+ -->
 <!DOCTYPE html>
 <html>
 
 <head>
-    <?php include_once '../head.php';?>
+    <?php include_once 'head.php';?>
 </head>
 
 <body>
     <?php
-        require_once "../header.php";
-        require_once "../menu.php";
+        require_once "header.php";
+        require_once "menu.php";
     ?>
     <ul>
         <li>
@@ -32,7 +40,7 @@
         </li>
     </ul>
     <?php
-        include_once "../footer.php";
+        include_once "footer.php";
     ?>
 </body>
 

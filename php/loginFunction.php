@@ -1,5 +1,13 @@
+<!-- 
+    *************************************************
+    *Author:Haotian Zhang
+    *Date: Feb 06 2019
+    *Purpose: login Function
+    *
+    *************************************************
+ -->
 <?php
-include_once "../top.php";
+include_once "top.php";
 //start session
 if (!isset($_SESSION)) {
     session_start();
@@ -34,13 +42,13 @@ if (isset($_POST['submit'])) {
 //result handling
     if ($error) {
         $_SESSION['wrongPassword'] = 1;
-        $location                  = 'Location: http://localhost' . $_root . '/loginPage/login.php';
+        $location                  = 'Location: http://localhost' . $_root . '/php/login.php';
         header($location);
     } else {
         $_SESSION['login']     = 1;
         $_SESSION['loginTime'] = time();
         unset($_SESSION['wrongPassword']);
-        $location = 'Location: http://localhost' . $_root.'/agentPage/newAgentInsert.php';
+        $location = 'Location: http://localhost' . $_root.'/php/newAgentInsert.php';
         header($location);
     }
 }

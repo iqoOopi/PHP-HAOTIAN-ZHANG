@@ -1,10 +1,18 @@
+<!-- 
+    *************************************************
+    *Author:Haotian Zhang
+    *Date: Feb 06 2019
+    *Purpose: nav bar
+    *
+    *************************************************
+ -->
 <?php
 include_once "top.php";
-$indexClass    = ($_SERVER['SCRIPT_NAME'] == $_root.'/index.php') ? 'class="active"' : '';
-$newAgentClass = ($_SERVER['SCRIPT_NAME'] == $_root.'/agentPage/newAgentInsert.php') ? 'class="active"' : '';
-$linksClass    = ($_SERVER['SCRIPT_NAME'] == $_root.'/linksPage/links.php') ? 'class="active"' : '';
-$registerClass = ($_SERVER['SCRIPT_NAME'] == $_root.'/registerPage/register.php') ? 'class="active"' : '';
-$contactClass  = ($_SERVER['SCRIPT_NAME'] == $_root.'/contactPage/contact.php') ? 'class="active"' : '';
+$indexClass    = ($_SERVER['SCRIPT_NAME'] == $_root.'/php/index.php') ? 'class="active"' : '';
+$newAgentClass = ($_SERVER['SCRIPT_NAME'] == $_root.'/php/newAgentInsert.php') ? 'class="active"' : '';
+$linksClass    = ($_SERVER['SCRIPT_NAME'] == $_root.'/php/links.php') ? 'class="active"' : '';
+$registerClass = ($_SERVER['SCRIPT_NAME'] == $_root.'/php/register.php') ? 'class="active"' : '';
+$contactClass  = ($_SERVER['SCRIPT_NAME'] == $_root.'/php/contact.php') ? 'class="active"' : '';
 
 echo ("
 <nav class='nav'>
@@ -13,16 +21,16 @@ echo ("
             <a $indexClass href='$_root/index.php'>Home</a>
         </li>
         <li>
-            <a $linksClass href='$_root/linksPage/links.php'>Links</a>
+            <a $linksClass href='$_root/php/links.php'>Links</a>
         </li>
         <li>
-            <a $registerClass href='$_root/registerPage/register.php'>Registration</a>
+            <a $registerClass href='$_root/php/register.php'>Registration</a>
         </li>
         <li>
-            <a $newAgentClass href='$_root/agentPage/newAgentInsert.php'>newAgent</a>
+            <a $newAgentClass href='$_root/php/newAgentInsert.php'>newAgent</a>
         </li>
         <li>
-            <a $contactClass href='$_root/contactPage/contact.php'>Contact Us</a>
+            <a $contactClass href='$_root/php/contact.php'>Contact Us</a>
         </li>");
 
 // show login/logout button
@@ -33,7 +41,7 @@ if (isset($_SESSION['login'])&&$_SESSION['login'] == 1) {
         <script>
         document.getElementById('logout').addEventListener('click', function(){
             if (confirm('Are you sure?')){
-                window.location.href = '$_root/Functions/logoutFunction.php';
+                window.location.href = '$_root/php/logoutFunction.php';
             }
         });
         </script>
@@ -42,7 +50,7 @@ if (isset($_SESSION['login'])&&$_SESSION['login'] == 1) {
 } else {
  echo ("
         <li class='ultity'>
-            <a href='$_root/loginPage/login.php'>Login</a>
+            <a href='$_root/php/login.php'>Login</a>
         </li>");
 }
 echo ("</ul></nav>")

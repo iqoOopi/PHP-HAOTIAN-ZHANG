@@ -1,3 +1,11 @@
+<!-- 
+    *************************************************
+    *Author:Haotian Zhang
+    *Date: Feb 06 2019
+    *Purpose: added as per JS course requiement.
+    *
+    *************************************************
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

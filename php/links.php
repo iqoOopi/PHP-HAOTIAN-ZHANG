@@ -1,14 +1,22 @@
+<!-- 
+    *************************************************
+    *Author:Haotian Zhang
+    *Date: Feb 06 2019
+    *Purpose: show link page
+    *
+    *************************************************
+ -->
 <!DOCTYPE html>
 <html>
 
 <head>
-    <?php include_once '../head.php';?>
+    <?php include_once 'head.php';?>
 </head>
 
 <body>
     <?php
-        require_once "../header.php";
-        require_once "../menu.php";
+        require_once "header.php";
+        require_once "menu.php";
     ?>
     <header>
         <h1>Links Page</h1>
@@ -26,7 +34,7 @@
         echo "</table>";
     ?>
 <?php
-    include_once "../footer.php";
+    include_once "footer.php";
 ?>
 </body>
 

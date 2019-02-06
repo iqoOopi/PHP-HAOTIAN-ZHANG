@@ -7,23 +7,23 @@
     *
     *************************************************
  -->
-<?php include_once "top.php"; ?>
+<?php include_once "php/top.php"; ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-<?php include_once "head.php";?>
+<?php include_once "php/head.php";?>
 </head>
 
 <body>
     <?php
-       require_once "header.php";
+       require_once "php/header.php";
    ?>
     <div class="main-container">
         <h1 class="title">Welcome to Travel Experts</h1>
         <?php
             // echo phpinfo();
-            require_once "menu.php";
+            require_once "php/menu.php";
             date_default_timezone_set("US/Mountain");
             $hour = localtime()[2];
             if ($hour > 18) {
@@ -73,14 +73,14 @@
         <!-- floating contact icon -->
         <?php
         echo("
-        <a href='$_root/contactPage/contact.php'>
+        <a href='$_root/php/contact.php'>
             <img id='customerService' src='pic/Customer-Service.png'>
         </a>
         ")
         ?>
         <!-- <img id="test" src="pic/Customer-Service.png"> -->
         <?php
-            require_once "footer.php";
+            require_once "php/footer.php";
         ?>
       
         <script src="js/array-script.js"></script>

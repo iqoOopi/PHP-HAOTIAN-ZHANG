@@ -1,5 +1,13 @@
+<!-- 
+    *************************************************
+    *Author:Haotian Zhang
+    *Date: Feb 06 2019
+    *Purpose: commit data into DB
+    *
+    *************************************************
+ -->
 <?php
-include_once ('../class.php');
+include_once ('class.php');
 function connectDB()
 {
     $link = new mysqli("127.0.0.1", "admin", "P@ssw0rd", "travelexperts");

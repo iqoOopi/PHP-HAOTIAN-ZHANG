@@ -1,4 +1,13 @@
+<!-- 
+    *************************************************
+    *Author:Haotian Zhang
+    *Date: Feb 06 2019
+    *Purpose: define classes
+    *
+    *************************************************
+ -->
 <?php
+//parent
 class person
 {
     protected $id;
@@ -45,6 +54,8 @@ class person
         $this->lastName = $x;
     }
 }
+
+//child
 class agent extends person
 {
     private $AgtBusPhone;

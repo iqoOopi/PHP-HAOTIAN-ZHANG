@@ -1,11 +1,19 @@
+<!-- 
+    *************************************************
+    *Author:Haotian Zhang
+    *Date: Feb 06 2019
+    *Purpose: controller for insert new agent data
+    *
+    *************************************************
+ -->
 <?php
-include_once "../top.php";
+include_once "top.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php include_once "../head.php";?>
+    <?php include_once "head.php";?>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js">
     </script>
@@ -13,8 +21,8 @@ include_once "../top.php";
 
 <body>
     <?php
-        include_once "../header.php";
-        include_once "../menu.php";
+        include_once "header.php";
+        include_once "menu.php";
         include_once "drawAgentTable.php";
     ?>
 
@@ -22,7 +30,7 @@ include_once "../top.php";
         
         //not logged in
         if (!isset($_SESSION['login']) || $_SESSION['login'] == 0) {
-            header("Location: http://localhost/$_root/loginPage/login.php");
+            header("Location: http://localhost/$_root/php/login.php");
         } else {//logged in
             
             //show logged in time
@@ -64,7 +72,7 @@ include_once "../top.php";
                 } else {
                     //no error,ready to go
                     //Lazy load
-                    include_once "../Functions/insertFunction.php";
+                    include_once "../php/insertFunction.php";
                     $agent=new agent(1,$tempValue[0]);
                     $insertResult = insertIntoDB($agent, $tblName);
                     if ($insertResult) {
@@ -77,7 +85,7 @@ include_once "../top.php";
         }
     ?>
 <?php
-    include_once "../footer.php";
+    include_once "footer.php";
 ?>
     <!-- input mask for phone input -->
     <script type="text/javascript">

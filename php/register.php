@@ -1,20 +1,33 @@
+<!-- 
+    *************************************************
+    *Author:Haotian Zhang
+    *Date: Feb 06 2019
+    *Purpose: draw register page as per JS course required
+    *
+    *************************************************
+ -->
+ <?php
+        include_once 'top.php';
+    ?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <?php
-        include_once '../head.php';
+        include_once 'head.php';
         include_once 'bouncer.php';
     ?>
 </head>
 
 <body>
     <?php
-        require_once "../header.php";
-        require_once "../menu.php";
+        require_once "header.php";
+        require_once "menu.php";
     ?>
     <header id="registerHeader">
-        <img id="registerImg" src="/PHP-HAOTIAN-ZHANG/pic/register-icon.png">
+        <?php 
+        echo ("<img id='registerImg' src='$_root/pic/register-icon.png'>")
+        ?>
         <h1>
             Regist Now!
         </h1>
@@ -60,9 +73,9 @@
         <input type="submit" class="button" id="formSubmit" value="Submit">
     </form>
     <?php
-        include_once "../footer.php";
+        include_once "footer.php";
     ?>
-    <script src="register-script.js"></script>
+    <script src="../js/register-script.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,13 @@
+<!-- 
+    *************************************************
+    *Author:Haotian Zhang
+    *Date: Feb 06 2019
+    *Purpose: show login page
+    *
+    *************************************************
+ -->
 <?php
-include_once "../top.php";
+include_once "top.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,7 +45,7 @@ if (isset($_SESSION['wrongPassword']) && $_SESSION['wrongPassword']) {
                     </div>
                 </div>
                 <div class="d-flex justify-content-center form_container">
-                    <form method="post" action="../Functions/loginFunction.php">
+                    <form method="post" action="../php/loginFunction.php">
                         <div class="input-group mb-3">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>

@@ -1,8 +1,15 @@
+<!-- 
+    *************************************************
+    *Author:Haotian Zhang
+    *Date: Feb 06 2019
+    *Purpose: set up header part
+    *
+    *************************************************
+ -->
 <?php
-// $path=dirname(__DIR__);
-// echo $path;
+include_once 'top.php';
 echo ("
  <header>
- <img src='/PHP-HAOTIAN-ZHANG/pic/logo.jpg'>
+ <img src='$_root/pic/logo.jpg'>
 </header>");
 ?>
