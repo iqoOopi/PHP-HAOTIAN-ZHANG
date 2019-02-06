@@ -1,3 +1,12 @@
+<!-- 
+    *************************************************
+    *Author:Haotian Zhang
+    *Date: Feb 06 2019
+    *Purpose: This is the main landing page for
+    *the Travel Experts website.
+    *
+    *************************************************
+ -->
 <?php include_once "top.php"; ?>
 <!DOCTYPE html>
 <html>
