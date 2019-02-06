@@ -27,7 +27,6 @@ include_once "top.php";
     ?>
 
     <?php
-        
         //not logged in
         if (!isset($_SESSION['login']) || $_SESSION['login'] == 0) {
             header("Location: http://localhost/$_root/php/login.php");
