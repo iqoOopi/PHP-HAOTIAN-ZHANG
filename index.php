@@ -54,12 +54,12 @@
 
         <div class="function-grid">
             <div class="grid-image2">
-                <a href="contact.php">
+                <a href="php/contact.php">
                     <img src="pic/contact.jpg">
                 </a>
             </div>
             <div class="grid-image2">
-                <a href="register.php">
+                <a href="php/register.php">
                     <img src="pic/register.jpg">
                 </a>
             </div>

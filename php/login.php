@@ -74,7 +74,7 @@ if (isset($_SESSION['wrongPassword']) && $_SESSION['wrongPassword']) {
 
                 <div class="mt-4">
 					<div class="d-flex justify-content-center links">
-						Back to Home Page <a href="../index.php" class="ml-2">Home</a>
+						<a href="../index.php" class="ml-2">Back to Home Page</a>
 					</div>
 					<!-- <div class="d-flex justify-content-center links">
 						<a href="#">Forgot your password?</a>

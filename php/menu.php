@@ -8,7 +8,7 @@
  -->
 <?php
 include_once "top.php";
-$indexClass    = ($_SERVER['SCRIPT_NAME'] == $_root.'/php/index.php') ? 'class="active"' : '';
+$indexClass    = ($_SERVER['SCRIPT_NAME'] == $_root.'/index.php') ? 'class="active"' : '';
 $newAgentClass = ($_SERVER['SCRIPT_NAME'] == $_root.'/php/newAgentInsert.php') ? 'class="active"' : '';
 $linksClass    = ($_SERVER['SCRIPT_NAME'] == $_root.'/php/links.php') ? 'class="active"' : '';
 $registerClass = ($_SERVER['SCRIPT_NAME'] == $_root.'/php/register.php') ? 'class="active"' : '';
