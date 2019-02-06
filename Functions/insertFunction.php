@@ -45,7 +45,7 @@ function insertIntoDB(agent $agent,$tblName)
     //     $TableColoumnValue = substr($TableColoumnValue, 0, -1);
 
     $sqlName=$agent->nameToString();
-    $sqlValue=$agent->valueToString();
+    $sqlValue=$agent;
    
         $sql               = "INSERT INTO $tblName ($sqlName) VALUES($sqlValue)";
         //code for testing

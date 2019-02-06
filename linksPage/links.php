@@ -15,8 +15,6 @@
     </header>
     <?php
         require_once "variable.php";
-        $rows = 6;
-        // $cols = 2;
         echo "<table id='linkTable'>";
         $i = 1;
         foreach ($variableArray as $label => $url) {

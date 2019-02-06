@@ -5,7 +5,7 @@ class person
     protected $firstName;
     protected $middleInitial;
     protected $lastName;
-    public function __construct($id, $firstName, $middleInitial, $lastName)
+    protected function __construct($id, $firstName, $middleInitial, $lastName)
     {
         $this->id            = $id;
         $this->firstName     = $firstName;
@@ -60,10 +60,10 @@ class agent extends person
         $this->AgtEmail    = $tempArray['AgtEmail'];
         $this->AgtPosition = $tempArray['AgtPosition'];
         $this->AgencyId    = $tempArray['AgencyId'];
-        $this->id=id;//currently no use
+        $this->id=$id;//currently no use
     }
 
-    public function valueToString()
+    public function __toString()
     {
         // return ($this->firstName . ',' . $this->middleInitial . ',' . $this->lastName . ',' . $this->AgtBusPhone . ',' . $this->AgtEmail . ',' . $this->AgtPosition . ',' . $this->AgencyId);
         return ("'$this->firstName','$this->middleInitial','$this->lastName','$this->AgtBusPhone','$this->AgtEmail','$this->AgtPosition','$this->AgencyId'");
