@@ -8,10 +8,7 @@
  -->
 <?php
 include_once "top.php";
-//start session
-if (!isset($_SESSION)) {
-    session_start();
-}
+
 //get stored pasword
 $userPassword = getUserPasswordInfo();
 

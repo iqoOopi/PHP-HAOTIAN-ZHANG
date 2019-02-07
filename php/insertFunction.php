@@ -11,7 +11,6 @@ include_once ('class.php');
 function connectDB()
 {
     $link = new mysqli("127.0.0.1", "admin", "P@ssw0rd", "travelexperts");
-    // $dbh               = mysqli_connect("127.0.0.1", "admin", "P@ssw0rd", "travelexperts");
     if ($link->connect_errno) {
         echo "Error number: " . $link->connect_error . PHP_EOL;
         exit;
@@ -30,10 +29,10 @@ function insertIntoDB(agent $agent,$tblName)
     // $TableColoumnValue = "";
     $link              = connectDB();
     $result;
-    // Nested foreach to dynamic determin the amount of key=>value pair of the data.
-    //1st foreach get the new row of data
 
     //generic insert replaced by final day exerice that required use  class
+    // Nested foreach to dynamic determin the amount of key=>value pair of the data.
+    //1st foreach get the new row of data
         // foreach ($tempArray as $i => $data) {
         //     //2nd foreach get the key=>value pair out of the row data.
         //     foreach ($data as $key => $value) {
@@ -54,13 +53,8 @@ function insertIntoDB(agent $agent,$tblName)
 
     $sqlName=$agent->nameToString();
     $sqlValue=$agent;
-    echo($sqlName."<br>");
-    echo($agent);
    
         $sql               = "INSERT INTO $tblName ($sqlName) VALUES($sqlValue)";
-        //code for testing
-        // echo $sql;
-        // echo ("<br>**************<br>");
 
          //generic insert continue Reset string holder for next data row
             // $TableColoumnName  = "";

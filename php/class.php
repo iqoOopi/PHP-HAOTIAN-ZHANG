@@ -77,14 +77,18 @@ class agent extends person
     public function __toString()
     {
         //prepare Mysql query coloum value string.
-        // return ($this->firstName . ',' . $this->middleInitial . ',' . $this->lastName . ',' . $this->AgtBusPhone . ',' . $this->AgtEmail . ',' . $this->AgtPosition . ',' . $this->AgencyId);
-
         $output = "";
         foreach ($this as $key => $value) {
-            if ($key != 'id') {
-                $output .= ("'" . $value . "',");
+            switch ($key) {
+                case 'id':
+                    //for future use
+                    break;
+                default:
+                    $output .= ("'" . $value . "',");
+                    break;
             }
         }
+        //trim the last ","
         return (substr($output, 0, -1));
     }
     public function nameToString()
@@ -94,7 +98,7 @@ class agent extends person
         foreach ($this as $key => $value) {
             switch ($key) {
                 case 'id':
-                //for future use
+                    //for future use
                     break;
                 case 'firstName':
                     $output .= ('AgtFirstName' . ',');
@@ -111,8 +115,8 @@ class agent extends person
             }
 
         }
+        //trim the last ","
         return (substr($output, 0, -1));
-        // return 'AgtFirstName,AgtMiddleInitial,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId';
     }
     public function getAgtBusPhone()
     {
