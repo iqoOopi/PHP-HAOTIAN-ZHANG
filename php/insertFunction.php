@@ -54,6 +54,8 @@ function insertIntoDB(agent $agent,$tblName)
 
     $sqlName=$agent->nameToString();
     $sqlValue=$agent;
+    echo($sqlName."<br>");
+    echo($agent);
    
         $sql               = "INSERT INTO $tblName ($sqlName) VALUES($sqlValue)";
         //code for testing

@@ -1,4 +1,4 @@
-<!-- 
+<!--
     *************************************************
     *Author:Haotian Zhang
     *Date: Feb 06 2019
@@ -71,17 +71,48 @@ class agent extends person
         $this->AgtEmail    = $tempArray['AgtEmail'];
         $this->AgtPosition = $tempArray['AgtPosition'];
         $this->AgencyId    = $tempArray['AgencyId'];
-        $this->id=$id;//currently no use
+        $this->id          = $id; //currently no use
     }
 
     public function __toString()
     {
+        //prepare Mysql query coloum value string.
         // return ($this->firstName . ',' . $this->middleInitial . ',' . $this->lastName . ',' . $this->AgtBusPhone . ',' . $this->AgtEmail . ',' . $this->AgtPosition . ',' . $this->AgencyId);
-        return ("'$this->firstName','$this->middleInitial','$this->lastName','$this->AgtBusPhone','$this->AgtEmail','$this->AgtPosition','$this->AgencyId'");
+
+        $output = "";
+        foreach ($this as $key => $value) {
+            if ($key != 'id') {
+                $output .= ("'" . $value . "',");
+            }
+        }
+        return (substr($output, 0, -1));
     }
     public function nameToString()
     {
-        return 'AgtFirstName,AgtMiddleInitial,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId';
+        //prepare Mysql query coloum name string.
+        $output = "";
+        foreach ($this as $key => $value) {
+            switch ($key) {
+                case 'id':
+                //for future use
+                    break;
+                case 'firstName':
+                    $output .= ('AgtFirstName' . ',');
+                    break;
+                case 'middleInitial':
+                    $output .= ('AgtMiddleInitial' . ',');
+                    break;
+                case 'lastName':
+                    $output .= ('AgtLastName' . ',');
+                    break;
+                default:
+                    $output .= ($key . ",");
+                    break;
+            }
+
+        }
+        return (substr($output, 0, -1));
+        // return 'AgtFirstName,AgtMiddleInitial,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId';
     }
     public function getAgtBusPhone()
     {
@@ -109,3 +140,4 @@ class agent extends person
         $this->AgencyId = $x;
     }
 }
+?>

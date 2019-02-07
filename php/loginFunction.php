@@ -1,4 +1,4 @@
-<!-- 
+<!--
     *************************************************
     *Author:Haotian Zhang
     *Date: Feb 06 2019
@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['login']     = 1;
         $_SESSION['loginTime'] = time();
         unset($_SESSION['wrongPassword']);
-        $location = 'Location: http://localhost' . $_root.'/php/newAgentInsert.php';
+        $location = 'Location: http://localhost' . $_root . '/php/newAgentInsert.php';
         header($location);
     }
 }
